@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import {
   Bike,
@@ -19,7 +19,7 @@ const phoneDisplay = "462 368 8190";
 const phoneDial = "4623688190";
 const phoneWa = "524623688190";
 const repartidorImg = `${import.meta.env.BASE_URL}assets/repartidor.png`;
-const logoImg = `${import.meta.env.BASE_URL}assets/logo-pacheco.png`;
+const logoImg = `${import.meta.env.BASE_URL}assets/logo-pacheco-round.png`;
 const whatsappUrl =
   "https://wa.me/524623688190?text=Hola%2C%20quiero%20cotizar%20un%20envio%20en%20Irapuato.";
 const vcard = `BEGIN:VCARD
@@ -61,10 +61,24 @@ function ServiceItem({ icon: Icon, title, text }) {
 }
 
 function App() {
+  const [showIntro, setShowIntro] = useState(true);
   const cardUrl = window.location.href;
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => setShowIntro(false), 5000);
+    return () => window.clearTimeout(timer);
+  }, []);
 
   return (
     <main className="digital-shell">
+      {showIntro && (
+        <section className="intro-animation" aria-label="Somos tu mejor opcion">
+          <div className="intro-glow" />
+          <img src={logoImg} alt="" aria-hidden="true" />
+          <p>Somos tu mejor opcion</p>
+        </section>
+      )}
+
       <section className="digital-card" aria-label="Tarjeta digital Moto Envios Pacheco">
         <div className="hero">
           <img className="hero-photo" src={repartidorImg} alt="Repartidor de Moto Envios Pacheco" />
@@ -77,7 +91,7 @@ function App() {
         <section className="profile">
           <p className="eyebrow">Irapuato, Guanajuato</p>
           <h1>Moto Envios Pacheco</h1>
-          <p className="subtitle">Envios rapidos en moto, comida, paquetes, pagos y mandados. Servicio directo por WhatsApp.</p>
+          <p className="subtitle">Envios rapidos y seguros en moto, comida, paquetes, pagos y mandados. Servicio directo por WhatsApp.</p>
         </section>
 
         <section className="quick-actions" aria-label="Contacto rapido">
