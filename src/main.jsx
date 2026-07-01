@@ -75,7 +75,7 @@ function App() {
         <section className="intro-animation" aria-label="Somos tu mejor opcion">
           <div className="intro-glow" />
           <img src={logoImg} alt="" aria-hidden="true" />
-          <p>Somos tu mejor opcion</p>
+          <p>Somos tu mejor opción</p>
         </section>
       )}
 
