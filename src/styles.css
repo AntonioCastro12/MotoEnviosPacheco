@@ -266,11 +266,26 @@ h1 {
   border-radius: var(--radius);
   padding: 10px 12px;
   background: rgba(255, 255, 255, 0.07);
+  transform: translateY(0) scale(1);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .action-link:hover {
+  transform: translateY(-2px);
   border-color: rgba(255, 255, 255, 0.26);
   background: rgba(255, 255, 255, 0.11);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+}
+
+.action-link:active {
+  transform: translateY(1px) scale(0.985);
+  border-color: rgba(255, 209, 102, 0.5);
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.24);
 }
 
 .action-link.primary {
@@ -286,6 +301,15 @@ h1 {
   place-items: center;
   border-radius: var(--radius);
   background: rgba(255, 255, 255, 0.1);
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.action-link:hover .action-icon {
+  transform: scale(1.06);
+}
+
+.action-link:active .action-icon {
+  transform: scale(0.94);
 }
 
 .primary .action-icon {
@@ -316,6 +340,16 @@ h1 {
 .action-arrow {
   color: currentColor;
   opacity: 0.72;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.action-link:hover .action-arrow {
+  opacity: 1;
+  transform: translateX(3px);
+}
+
+.action-link:active .action-arrow {
+  transform: translateX(1px);
 }
 
 .info-strip {
