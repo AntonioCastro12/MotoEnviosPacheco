@@ -89,7 +89,7 @@ function App() {
         </div>
 
         <section className="profile">
-          {/* <p className="eyebrow">Irapuato, Guanajuato</p> */}
+          <p className="eyebrow">Irapuato, Guanajuato</p>
           <h1>Moto Envios Pacheco</h1>
           <p className="subtitle">Envios rapidos y seguros en moto, comida, paquetes, pagos y mandados. Servicio directo por WhatsApp.</p>
         </section>
