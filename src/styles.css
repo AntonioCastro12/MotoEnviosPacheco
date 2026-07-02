@@ -36,8 +36,52 @@ a {
 .digital-shell {
   min-height: 100vh;
   display: grid;
+  gap: 24px;
   place-items: center;
   padding: 28px 14px;
+}
+
+.cover-link {
+  width: min(100%, 460px);
+  display: grid;
+  gap: 14px;
+  justify-items: center;
+  text-align: center;
+}
+
+.cover-link p {
+  width: 100%;
+  margin: 0;
+  border: 1px solid rgba(255, 209, 102, 0.24);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-size: clamp(1.05rem, 4vw, 1.32rem);
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.cover-link a {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(255, 209, 102, 0.52);
+  border-radius: var(--radius);
+  background: #050806;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.38);
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.cover-link a:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 209, 102, 0.9);
+}
+
+.cover-link img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .intro-animation {
@@ -153,6 +197,7 @@ a {
 
 .digital-card {
   width: min(100%, 460px);
+  scroll-margin-top: 18px;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: var(--radius);
