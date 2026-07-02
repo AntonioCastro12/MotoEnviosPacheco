@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+﻿import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import {
   Bike,
@@ -20,7 +20,6 @@ const phoneDial = "4623688190";
 const phoneWa = "524623688190";
 const repartidorImg = `${import.meta.env.BASE_URL}assets/repartidor.png`;
 const logoImg = `${import.meta.env.BASE_URL}assets/logo-pacheco-round.png`;
-const linkImg = `${import.meta.env.BASE_URL}assets/tarjeta-digital-link.png`;
 const whatsappUrl =
   "https://wa.me/524623688190?text=Hola%2C%20quiero%20cotizar%20un%20envio%20en%20Irapuato.";
 const vcard = `BEGIN:VCARD
@@ -76,16 +75,9 @@ function App() {
         <section className="intro-animation" aria-label="Somos tu mejor opcion">
           <div className="intro-glow" />
           <img src={logoImg} alt="" aria-hidden="true" />
-          <p>Somos tu mejor opción</p>
+          <p>Somos tu mejor opcion</p>
         </section>
       )}
-
-      <section className="cover-link" aria-label="Enlace visual a la tarjeta digital">
-        <p>Haz click a la imagen para ver mi tarjeta digital</p>
-        <a href="#tarjeta" aria-label="Ver tarjeta digital Moto Envios Pacheco">
-          <img src={linkImg} alt="Imagen de Moto Envios Pacheco para abrir tarjeta digital" />
-        </a>
-      </section>
 
       <section id="tarjeta" className="digital-card" aria-label="Tarjeta digital Moto Envios Pacheco">
         <div className="hero">
@@ -154,3 +146,5 @@ function App() {
 }
 
 createRoot(document.getElementById("root")).render(<App />);
+
+
